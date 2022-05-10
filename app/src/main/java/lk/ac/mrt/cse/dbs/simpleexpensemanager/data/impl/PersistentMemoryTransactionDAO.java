@@ -31,18 +31,18 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.ui.DbHelper;
  * transaction logs are stored in a LinkedList in memory.
  */
 public class PersistentMemoryTransactionDAO implements TransactionDAO {
-    private final List<Transaction> transactions;
+    private  List<Transaction> transactions;
 
     public PersistentMemoryTransactionDAO(DbHelper db)  {
 
-        transactions = db.getTransData();
+
     }
 
     @Override
     public void logTransaction(String date, String accountNo, ExpenseType expenseType, double amount, DbHelper mydb) {
         Transaction transaction = new Transaction(date, accountNo, expenseType, amount);
         mydb.insertTransData(transaction.getDate().toString(),transaction.getAccountNo(),transaction.getExpenseType().toString(), transaction.getAmount());
-
+        this.transactions = mydb.getTransData();
         //transactions.add(transaction);
     }
 
