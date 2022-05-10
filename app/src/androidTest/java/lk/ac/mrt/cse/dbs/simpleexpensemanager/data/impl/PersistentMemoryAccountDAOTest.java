@@ -37,14 +37,14 @@ public class PersistentMemoryAccountDAOTest {
 
     }
 
-    @Test
-    public void getAccount() throws InvalidAccountException {
-        String accountNo="125A";
+//     @Test
+//     public void getAccount() throws InvalidAccountException {
+//         String accountNo="125A";
 
-        DbHelper db = new DbHelper(ApplicationProvider.getApplicationContext());
-        PersistentMemoryAccountDAO testAccDAO= new PersistentMemoryAccountDAO(db);
+//         DbHelper db = new DbHelper(ApplicationProvider.getApplicationContext());
+//         PersistentMemoryAccountDAO testAccDAO= new PersistentMemoryAccountDAO(db);
 
-        Account output= testAccDAO.getAccount(accountNo);
-        assertEquals(accountNo,output.getAccountNo());
-    }
+//         Account output= testAccDAO.getAccount(accountNo);
+//         assertEquals(accountNo,output.getAccountNo());
+//     }
 }
